@@ -5,6 +5,7 @@ class MovieDetails extends Component {
     render() {
         let movies = this.props.movies
         let movie = movies.find( m => m.id == this.props.match.params.id) 
+        console.log(movies)
         return (
             <div className = "info-container">
                 <img src={movie.img} ></img>

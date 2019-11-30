@@ -11,7 +11,7 @@ class Movie extends Component {
         return (
             <div className = "movie">
                 <p className="movie-title">{this.props.movie.title}</p>
-                <Link to ={`movies/${id}`}><img src={this.props.movie.img} alt = ""></img></Link>
+                <Link to ={`/movies/${id}`}><img src={this.props.movie.img} alt = ""></img></Link>
                 {this.props.movie.isRented ? <div className = "remove" onClick = {this.changeRental}> Remove </div> 
                 : <div className = "rent" onClick = {this.changeRental}> Rent </div>}
             </div>

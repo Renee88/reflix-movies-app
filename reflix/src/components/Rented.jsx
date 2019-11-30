@@ -3,11 +3,11 @@ import Movie from './Movie';
 
 class Rented extends Component {
     render() {
-        let users = JSON.parse(this.props.users)
+        let users = this.props.users
+        console.log(users)
         let userIndex = this.props.match.params.id
         let searchInput = this.props.search
         let rentedMovies = users[userIndex].catalog.filter(m=> m.isRented)
-        console.log(rentedMovies)
         let matchedMovies = rentedMovies.filter(m => m.title.toLowerCase().includes(searchInput))
         return (
             <div>
