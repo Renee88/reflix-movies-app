@@ -1,0 +1,183 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #09d3ac;
+}
+
+
+#main-container{
+  display: grid;
+  background-color: black;
+  min-height: 100vh;
+  grid-template-rows: max-content
+}
+
+a{
+  font-size: 20px;
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+#home{
+  display: grid;
+}
+
+.links{
+  display: grid;
+  grid-template-columns: repeat(2,1fr) 3fr ;
+  padding: 10px;
+  align-items: center;
+}
+
+#logo{
+  display: grid;
+  justify-self: end ;
+  font-size: 25px;
+  font-weight: bold;
+  color: red;
+  text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+
+}
+
+#search{
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  width: 70%;
+  justify-self: center;
+  height: fit-content;
+  align-self: center;
+  
+}
+
+
+button{
+  width: fit-content;
+  border-radius: 5px;
+}
+
+input{
+  border-radius: 5px;
+  margin: 2px;
+  padding: 2px;
+}
+
+#catalog{
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  justify-items: center;
+  color: white;
+}
+
+.movie{
+  display: grid;
+  justify-items: center;
+}
+
+img{
+  width: 250px;
+  height:270px;
+}
+
+.remove{
+  display: grid;
+  background-color: white;
+  border-radius: 3px;
+  width: fit-content;
+  height: fit-content;
+  color: black;
+  padding: 3px;
+  margin: 2px;
+  font-weight: bold;
+  justify-self: start;
+}
+
+.rent{
+  display: grid;
+  background-color: white;
+  border-radius: 3px;
+  width: fit-content;
+  height: fit-content;
+  color: black;
+  padding: 3px;
+  margin: 2px;
+  font-weight: bold;
+  justify-self: start;
+}
+
+.info-container{
+  display: grid;
+  justify-items: center;
+  align-items: center;
+}
+
+.movie-details{
+  color: white;
+  padding: 20px;
+}
+
+#home-title{
+  display: grid;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+  margin: 20px;
+}
+
+#rented{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+p{
+  color: white;
+  padding: 10px;
+}
+
+#add-user{
+  background-color: white;
+  color:black;
+  font-weight: bold;
+  font-size: 25px;
+  width: 200px;
+  height:150px;
+}
+
+#users-container{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.user{
+  display: grid;
+  margin: 20px;
+  align-content: center;
+  justify-content: center;
+  color: white;
+  border-radius: 10px;
+  border-style: solid;
+  border-color: white;
+  width: 200px;
+  height:150px;
+}
+
+#user-title-container{
+  display: grid;
+}
