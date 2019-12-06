@@ -11,7 +11,7 @@ class User extends Component {
     }
 
     render() {
-        let color = '#' + this.props.color
+        let color = this.props.color
         let userIndex = this.props.userIndex
         
         return (

@@ -93,8 +93,20 @@ class App extends Component {
     return color
   }
 
+
   changeUser = (userIndex) => {
     this.setState({ chosenUser: userIndex })
+  }
+
+  addUser = () => {
+    let newUser = prompt('Enter your name')
+    let users = [...this.state.users]
+    let user = {}
+    user.name = newUser
+    user.catalog = this.state.catalog
+    user.color = '#' + Math.floor(Math.random() * 16777215).toString(16);
+    users.push(user)
+    localStorage.users = JSON.stringify(users)
   }
 
 
@@ -104,7 +116,7 @@ class App extends Component {
       <Router>
         <div id="main-container">
           <Home updateSearchInput={this.updateSearchInput} chosenUser={this.state.chosenUser} />
-          <Route exact path="/" render={() => <Users users={this.state.users} assignColor={this.assignColor} changeUser={this.changeUser} />} />
+          <Route exact path="/" render={() => <Users users={this.state.users} assignColor={this.assignColor} changeUser={this.changeUser} addUser = {this.addUser} />} />
 
           <Route exact path="/catalog/:id" render={({ match }) => <Rented match={match} users={this.state.users} changeRental={this.changeRentalState} search={this.state.search} />} />
           <Route exact path="/catalog/:id" render={({ match }) => <Catalog match={match} movies={this.state.catalog} changeRental={this.changeRentalState} search={this.state.search} />} />

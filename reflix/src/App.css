@@ -1,26 +1,3 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #09d3ac;
-}
-
 
 #main-container{
   display: grid;
@@ -151,23 +128,18 @@ p{
   padding: 10px;
 }
 
-#add-user{
-  background-color: white;
-  color:black;
-  font-weight: bold;
-  font-size: 25px;
-  width: 200px;
-  height:150px;
-}
+
 
 #users-container{
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
 }
 
 .user{
   display: grid;
   margin: 20px;
+  font-size: 20px;
   align-content: center;
   justify-content: center;
   color: white;
@@ -180,4 +152,27 @@ p{
 
 #user-title-container{
   display: grid;
+}
+
+
+.user:hover {
+  width: 220px;
+  height:170px;
+}
+
+
+.user:hover {
+  width: 220px;
+  height:160px;
+}
+
+#add-user:hover{
+  width: 220px;
+  height:160px;
+}
+
+#add-user{
+  background-color: white;
+  color:black;
+  font-weight: bold;
 }
