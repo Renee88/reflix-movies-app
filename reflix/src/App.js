@@ -6,6 +6,7 @@ import Catalog from './components/Catalog';
 import MovieDetails from './components/MovieDetails';
 import Rented from './components/Rented';
 import Users from './components/Users';
+import axios from 'axios'
 
 class App extends Component {
   constructor() {
@@ -109,6 +110,9 @@ class App extends Component {
     localStorage.users = JSON.stringify(users)
   }
 
+  componentDidMount(){
+    axios.get('/')
+  }
 
   render() {
 
