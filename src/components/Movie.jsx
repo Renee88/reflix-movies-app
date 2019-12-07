@@ -7,7 +7,6 @@ class Movie extends Component {
     }
     render() {
         let id = this.props.movie.id
-        console.log(id)
         return (
             <div className = "movie">
                 <p className="movie-title">{this.props.movie.title}</p>

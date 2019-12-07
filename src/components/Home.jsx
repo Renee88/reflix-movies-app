@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
-import Rented from './Rented';
 
 class Home extends Component {
     
@@ -11,7 +10,7 @@ class Home extends Component {
             <div className="links">
                 <Link to="/"><span>Home</span></Link>
                 <Link to= {`/catalog/${userIndex}`} ><span>Catalog</span></Link>
-                <p id="logo"><span>Reflix</span></p>
+                <Link to = "/"><span id="logo">Reflix</span></Link>
             </div>
             <div id="search">
                 <input type="text" placeholder="What are you looking for?" onChange = {this.props.updateSearchInput}></input>

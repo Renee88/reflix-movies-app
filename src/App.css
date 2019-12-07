@@ -31,7 +31,7 @@ a{
 
 #logo{
   display: grid;
-  justify-self: end ;
+  justify-content: end;
   font-size: 25px;
   font-weight: bold;
   color: red;
@@ -67,6 +67,15 @@ input{
   color: white;
 }
 
+.back{
+  background-color: white;
+  color: black;
+  font-size: 15px;
+  padding: 5px;
+  border-radius: 3px;
+  font-weight: bold;
+}
+
 .movie{
   display: grid;
   grid-template-rows: 1fr 2fr 0.5fr;
@@ -77,6 +86,7 @@ input{
 img{
   width: 250px;
   height:270px;
+  box-shadow: 5px 5px 5px gray;
 }
 
 .remove{
@@ -114,6 +124,7 @@ img{
 .movie-details{
   color: white;
   padding: 20px;
+  font-size: 20px;
 }
 
 #home-title{

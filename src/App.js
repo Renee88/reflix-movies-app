@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import { BrowserRouter as Router, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom'
 import Home from './components/Home';
 import Catalog from './components/Catalog';
 import MovieDetails from './components/MovieDetails';
@@ -122,10 +122,11 @@ class App extends Component {
           <Home updateSearchInput={this.updateSearchInput} chosenUser={this.state.chosenUser} />
           <Route exact path="/" render={() => <Users users={this.state.users} assignColor={this.assignColor} changeUser={this.changeUser} addUser = {this.addUser} />} />
 
+          <Route exact path = '/catalog/'><Redirect to="/" /></Route>
           <Route exact path="/catalog/:id" render={({ match }) => <Rented match={match} users={this.state.users} changeRental={this.changeRentalState} search={this.state.search} />} />
           <Route exact path="/catalog/:id" render={({ match }) => <Catalog match={match} movies={this.state.catalog} changeRental={this.changeRentalState} search={this.state.search} />} />
           <Route exact path="/users/:id" render={({ match }) => <Rented match={match} users={this.state.users} changeRental={this.changeRentalState} search={this.state.search} />} />
-          <Route exact path="/movies/:id" render={({ match }) => <MovieDetails match={match} movies={this.state.catalog} />} />
+          <Route exact path="/movies/:id" render={({ match }) => <MovieDetails match={match} movies={this.state.catalog} chosenUser = {this.state.chosenUser} />} />
         </div>
       </Router>
     )
