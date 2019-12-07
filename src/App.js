@@ -110,8 +110,8 @@ class App extends Component {
     localStorage.users = JSON.stringify(users)
   }
 
-  componentDidMount(){
-    axios.get('/')
+  async componentDidMount(){
+    return await axios.get('/')
   }
 
   render() {
