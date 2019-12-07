@@ -11,10 +11,13 @@ mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/weatherDB', { u
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
-app.use(express.static(path.join(__dirname,'dist')))
-app.use(express.static(path.join(__dirname,'node_modules')))
+app.use(express.static(path.join(__dirname, 'build')))
 
 app.use('/', api)
+
+app.get('*', function (req, res) {
+    res.sendFile(path.join(__dirname, 'build', 'index.html'));
+});
 
 app.listen(port,function(){
    console.log(`Running on port ${port}`)
