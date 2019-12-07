@@ -67,6 +67,20 @@ input{
   color: white;
 }
 
+
+.movie{
+  display: grid;
+  grid-template-rows: 1fr 2fr 0.5fr;
+  justify-items: center;
+  margin: 10px;
+}
+
+.movie-details{
+  color: white;
+  padding: 20px;
+  font-size: 25px;
+}
+
 .back{
   background-color: white;
   color: black;
@@ -74,13 +88,6 @@ input{
   padding: 5px;
   border-radius: 3px;
   font-weight: bold;
-}
-
-.movie{
-  display: grid;
-  grid-template-rows: 1fr 2fr 0.5fr;
-  justify-items: center;
-  margin: 10px;
 }
 
 img{
@@ -121,11 +128,7 @@ img{
   align-items: center;
 }
 
-.movie-details{
-  color: white;
-  padding: 20px;
-  font-size: 20px;
-}
+
 
 #home-title{
   display: grid;
@@ -191,6 +194,12 @@ p{
     font-size: 13px;
     text-align: center;
   }
+
+  .movie-details{
+    color: white;
+    padding: 20px;
+    font-size: 13px;
+  }
 }
 
 @media screen and (max-width: 320px) {
@@ -235,6 +244,12 @@ p{
   .movie-title{
     font-size: 12px;
     text-align: center;
+  }
+
+  .movie-details{
+    color: white;
+    padding: 20px;
+    font-size: 12px;
   }
 }
 
