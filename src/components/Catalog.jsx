@@ -9,7 +9,7 @@ class Catalog extends Component {
         let matchedMovies = movies.filter(m => m.title.toLowerCase().includes(searchInput))
         let userIndex = this.props.match.params.id
         return (
-            <div>
+            <div className = "catalog-container">
                 <p>Catalog</p>
                 <div id="catalog">
                     {matchedMovies.length ? matchedMovies.map((m, i) => <Movie movie={m} movieIndex={i} userIndex = {userIndex} changeRental={this.props.changeRental} />) 
