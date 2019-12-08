@@ -20,7 +20,7 @@ class App extends Component {
         { id: 4, isRented: false, title: "Beauty and the Beast", year: 2016, img: "https://images-na.ssl-images-amazon.com/images/I/51ArFYSFGJL.jpg", descrShort: "Basically the same as the original, except now Hermi-- Emma Wattson plays Belle, fittingly so some would say, given how actively progressive she is regarding women's rights. Rumor has it that in the bonus scenes she whips out a wand and turns Gaston into a toad, but in order to watch those scenes you need to recite a certain incantation." }
       ],
 
-      users: JSON.parse(localStorage.users)
+      users: JSON.parse(localStorage.users) || []
       ,
       search: "",
       chosenUser: ""
@@ -108,6 +108,7 @@ class App extends Component {
     user.color = '#' + Math.floor(Math.random() * 16777215).toString(16);
     users.push(user)
     localStorage.users = JSON.stringify(users)
+    this.setState({users})
   }
 
  
