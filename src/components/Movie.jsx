@@ -3,7 +3,7 @@ import {BrowserRouter as Router, Route, Link} from 'react-router-dom'
 
 class Movie extends Component {
     changeRental = () =>{
-        this.props.changeRental(this.props.movie.id, this.props.userIndex)
+        this.props.changeRental(this.props.movie.id, this.props.userId)
     }
     render() {
         let id = this.props.movie.id

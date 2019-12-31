@@ -6,16 +6,14 @@ class User extends Component {
         this.props.changeUser(this.props.userIndex)
     }
 
-    addCatalog(){
-        this.props.changeUser(this.props.userIndex)
-    }
 
     render() {
         let color = this.props.color
+        let userId = this.props.userId
         let userIndex = this.props.userIndex
         
         return (
-            <Link to ={`users/${userIndex}`}><div className = "user" style = {{backgroundColor: this.props.assignColor(color,userIndex)}} onClick = {this.changeUser} >
+            <Link to ={`users/${userId}`}><div className = "user" style = {{backgroundColor: this.props.assignColor(color,userIndex)}} onClick = {this.changeUser} >
                 {this.props.name}
             </div></Link>
         );
