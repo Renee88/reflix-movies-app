@@ -49,7 +49,7 @@ class App extends Component {
 
   findMovie(userId, movieId) {
     let users = JSON.parse(localStorage.users)
-    let userCatalog = users.find(u=> u.id === userId).catalog
+    let userCatalog = users.find(u=> u.id == userId).catalog
     let index = 0
     for (let movie of userCatalog) {
       if (movie.id === movieId) {
@@ -74,8 +74,9 @@ class App extends Component {
 
   changeRentalState = (movieId, userId) => {
     let users = JSON.parse(localStorage.users)
+    console.log(userId)
     let movieIndex = this.findMovie(userId, movieId)
-    const currUser = users.find( u => u.id === userId )
+    const currUser = users.find( u => u.id == userId )
     let movieForRent = currUser.catalog[movieIndex]
     movieForRent.isRented = !movieForRent.isRented
 
