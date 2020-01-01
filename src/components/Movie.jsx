@@ -3,8 +3,15 @@ import {BrowserRouter as Router, Route, Link} from 'react-router-dom'
 
 class Movie extends Component {
     changeRental = () =>{
-        console.log(this.props)
-        this.props.changeRental(this.props.movie.id, this.props.userId)
+        const userIndex = this.findUserIndex()
+        this.props.changeRental(this.props.movie.id, this.props.userId, userIndex)
+    }
+
+    findUserIndex = () => {
+        const userId = this.props.userId
+        let users = JSON.parse(localStorage.users)
+        const userIndex = users.map(u => u.id).indexOf(userId)
+        return userIndex
     }
     render() {
         let movieId = this.props.movie.id

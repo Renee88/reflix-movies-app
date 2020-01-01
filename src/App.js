@@ -30,13 +30,13 @@ class App extends Component {
 
   findMovie(userId, movieId) {
     let users = JSON.parse(localStorage.users)
-    let userCatalog = users.find(u=> u.id == userId).catalog
-    let index = 0
+    let userCatalog = users.find(u => u.id == userId).catalog
+    let movieIndex = 0
     for (let movie of userCatalog) {
       if (movie.id === movieId) {
-        return index
+        return movieIndex
       } else {
-        index++
+        movieIndex++
       }
     }
   }
@@ -53,17 +53,17 @@ class App extends Component {
 
   }
 
-  changeRentalState = (movieId, userId) => {
+  changeRentalState = (movieId, userId, userIndex) => {
     let users = JSON.parse(localStorage.users)
     let movieIndex = this.findMovie(userId, movieId)
-    const currUser = users.find( u => u.id == userId )
+    const currUser = users.find(u => u.id == userId)
     let movieForRent = currUser.catalog[movieIndex]
     movieForRent.isRented = !movieForRent.isRented
 
-    let newCatalog = currUser.catalog
+    let currUserCatalog = currUser.catalog
     localStorage.users = JSON.stringify(users)
 
-    this.setState({ users, catalog: newCatalog })
+    this.setState({ users, catalog: currUserCatalog })
   }
 
   updateSearchInput = (e) => {
@@ -85,9 +85,11 @@ class App extends Component {
 
 
   changeUser = (userIndex) => {
-    let users = [...this.state.users]
+    let users = JSON.parse(localStorage.users)
     let chosenUser = users[userIndex].id
-    this.setState({ chosenUser })
+    const catalog = users[userIndex].catalog
+    this.setState({ users, catalog, chosenUser })
+
   }
 
   addUser = () => {
@@ -117,32 +119,39 @@ class App extends Component {
 
   componentDidMount() {
     const users = localStorage.users ? JSON.parse(localStorage.users) : []
+    // const userIndex = users.map(u => u.id).indexOf(this.state.chosenUser)
+    // if(userIndex !== -1){
+    //   const catalog = userIndex.catalog
+    //   const chosenUser = this.changeUser(userIndex)
+    //   this.setState({ users , catalog})
+    // } else {
     this.setState({ users })
   }
 
 
-  render() {
 
-    return (
-      <Router>
-        <div id="main-container">
-          <Home updateSearchInput={this.updateSearchInput} chosenUser={this.state.chosenUser} logOut={this.logOut} />
-          <Route exact path="/" render={() => <Users users={this.state.users} assignColor={this.assignColor} changeUser={this.changeUser} addUser={this.addUser} />} />
+render() {
 
-          <Route exact path='/catalog/'><Redirect to="/" /></Route>
-          <Route exact path='/catalog/undefined'><Redirect to="/" /></Route>
-          <Route exact path='/users/'><Redirect to="/" /></Route>
-          <Route exact path='/users/undefined'><Redirect to="/" /></Route>
-          <Route exact path='/movies/undefined'><Redirect to="/" /></Route>
+  return (
+    <Router>
+      <div id="main-container">
+        <Home updateSearchInput={this.updateSearchInput} chosenUser={this.state.chosenUser} logOut={this.logOut} />
+        <Route exact path="/" render={() => <Users users={this.state.users} assignColor={this.assignColor} changeUser={this.changeUser} addUser={this.addUser} />} />
 
-          <Route exact path="/catalog/:id" render={({ match }) => <Rented match={match} users={this.state.users} changeRental={this.changeRentalState} search={this.state.search} /> } />
-          <Route exact path="/catalog/:id" render={({ match }) => <Catalog match={match} movies={this.state.catalog} changeRental={this.changeRentalState} search={this.state.search} />} />
-          <Route exact path="/users/:id" render={({ match }) => <Rented match={match} users={this.state.users} changeRental={this.changeRentalState} search={this.state.search} />} />
-          <Route exact path="/movies/:id" render={({ match }) => <MovieDetails match={match} movies={this.state.catalog} chosenUser={this.state.chosenUser} />} />
-        </div>
-      </Router>
-    )
-  }
+        <Route exact path='/catalog/'><Redirect to="/" /></Route>
+        <Route exact path='/catalog/undefined'><Redirect to="/" /></Route>
+        <Route exact path='/users/'><Redirect to="/" /></Route>
+        <Route exact path='/users/undefined'><Redirect to="/" /></Route>
+        <Route exact path='/movies/undefined'><Redirect to="/" /></Route>
+
+        <Route exact path="/catalog/:id" render={({ match }) => <Rented match={match} users={this.state.users} changeRental={this.changeRentalState} search={this.state.search} />} />
+        <Route exact path="/catalog/:id" render={({ match }) => <Catalog match={match} movies={this.state.catalog} changeRental={this.changeRentalState} search={this.state.search} />} />
+        <Route exact path="/users/:id" render={({ match }) => <Rented match={match} users={this.state.users} changeRental={this.changeRentalState} search={this.state.search} />} />
+        <Route exact path="/movies/:id" render={({ match }) => <MovieDetails match={match} movies={this.state.catalog} chosenUser={this.state.chosenUser} />} />
+      </div>
+    </Router>
+  )
+}
 
 }
 
