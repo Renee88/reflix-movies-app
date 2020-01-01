@@ -24,10 +24,10 @@ class Home extends Component {
                 {userId ? <Link to={`/catalog/${userId}`} ><span>Catalog</span></Link> : <Link to = "/"><span>Sign up</span></Link>}
                 <Link to="/"><span id="logo">Reflix</span></Link>
             </div>
-             <div id="search">
+            {userId ? <div id="search">
                 <input type="text" placeholder="What are you looking for?" onChange={this.props.updateSearchInput}></input>
-                <button>Search</button>
-            </div>
+                <button>Search</button> 
+            </div> : null}
                 
         </div>)
     }

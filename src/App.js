@@ -27,25 +27,6 @@ class App extends Component {
     }
   }
 
-  // addCatalog = (userId) => {
-  //   let users = JSON.parse(localStorage.users)
-  //   const currUser = users.find( u => u.id === userId)
-  //   let userIndex = 0
-  //   if (!currUser) {
-  //     return
-  //   }
-
-  //   for(let user of users){
-  //     if(user.id === userId){
-  //       break
-  //     }
-  //     userIndex++
-  //   }
-
-  //   let LScatalog =[...this.state.catalog]
-  //   users[userIndex].catalog = LScatalog
-  //   localStorage.users = JSON.stringify(users)
-  // }
 
   findMovie(userId, movieId) {
     let users = JSON.parse(localStorage.users)
@@ -74,7 +55,6 @@ class App extends Component {
 
   changeRentalState = (movieId, userId) => {
     let users = JSON.parse(localStorage.users)
-    console.log(userId)
     let movieIndex = this.findMovie(userId, movieId)
     const currUser = users.find( u => u.id == userId )
     let movieForRent = currUser.catalog[movieIndex]
