@@ -19,24 +19,23 @@ A React.JS app, designed for movie rental, that uses local storage to serve data
 - A simple add user button
 - User based movie rental.
 
-## Future features
-- Sign up through a full sign up screen, instead of the simple add user button.
-- MySQL will be used to manage movie rent per user, instead of local storage.
-- Serve a broader and non-hardcoded list of movies, using a suitable api.
-
-## Home screen
+### Home screen
 
 ![](/screenshots/Home.png)
 
-## User catalog
+### User catalog
 
 ![](/screenshots/UserCatalog.png)
 
-## Rented movies
+### Rented movies
 
 ![](/screenshots/RentedMovies.png)
 
 
+## Future features
+- Sign up through a full sign up screen, instead of the simple add user button.
+- MySQL will be used to manage movie rent per user, instead of local storage.
+- Serve a broader and non-hardcoded list of movies, using a suitable api.
 
 
 
