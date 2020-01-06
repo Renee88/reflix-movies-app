@@ -6,8 +6,8 @@ A Front-end app, designed for movie rental, that uses local storage to serve dat
 
 ### Tech Stack
 
--ReactJS
--React router-dom
+- ReactJS
+- React router-dom
 
 ## Prerequisites
 
