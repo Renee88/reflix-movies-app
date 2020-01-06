@@ -2,7 +2,12 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 # Reflix
 
-A React.JS app, designed for movie rental, that uses local storage to serve data relevant to each account. The app enables rental of a desired movie per account, and gives a short description about each movie.  
+A Front-end app, designed for movie rental, that uses local storage to serve data relevant to each account. The app enables rental of a desired movie per account, and gives a short description about each movie.  
+
+### Tech Stack
+
+-ReactJS
+-React router-dom
 
 ## Prerequisites
 
